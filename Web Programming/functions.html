@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Functions</title>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<h1>SOEN 287 Study</h1>
+
+<script>
+
+// prints to console and page
+function print(text){
+    console.log(text);
+    document.write(text + "<br>");
+}
+
+document.write("<h2>Return Questions</h2>");
+
+document.write("<b>Question:</b> What does this return?<br>");
+document.write("<pre>function test1(){ return 10; }</pre>");
+
+function test1(){
+    return 10;
+}
+
+print("Answer: " + test1());
+
+document.write("<br>");
+
+document.write("<b>Question:</b> What does this return?<br>");
+document.write("<pre>function test2(){ let x = 5; }</pre>");
+
+function test2(){
+    let x = 5;
+}
+
+print("Answer: " + test2());
+
+document.write("<br>");
+
+document.write("<b>Question:</b> What does this return?<br>");
+document.write("<pre>function test3(){ return; }</pre>");
+
+function test3(){
+    return;
+}
+
+print("Answer: " + test3());
+
+
+document.write("<h2>Arguments Questions</h2>");
+
+document.write("<b>Question:</b> What happens when we call params with different numbers of arguments?<br>");
+
+function params(a,b){
+
+    print("arguments length: " + arguments.length);
+
+    for(let i=0;i<arguments.length;i++){
+        print("argument " + i + " = " + arguments[i]);
+    }
+
+    print("a = " + a);
+    print("b = " + b);
+
+    print("----");
+}
+
+document.write("<pre>params('Mozart')</pre>");
+params("Mozart");
+
+document.write("<pre>params('Mozart','Beethoven')</pre>");
+params("Mozart","Beethoven");
+
+document.write("<pre>params('Mozart','Beethoven','Tchaikowsky')</pre>");
+params("Mozart","Beethoven","Tchaikowsky");
+document.write("<h2>Callback Question</h2>");
+
+document.write("<b>Question:</b> What does this print?<br>");
+
+document.write(`<pre>
+function greet(name, callback){
+    console.log('Hello ' + name);
+    callback();
+}
+greet("Alice", function(){
+    print("Done!");
+});
+
+</pre>`);
+
+function greet(name, callback){
+    print("Hello " + name);
+    callback();
+}
+
+greet("Alice", function(){
+    print("Done!");
+});
+
+</script>
+
+</body>
+</html>

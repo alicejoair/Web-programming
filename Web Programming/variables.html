@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Hello world </title>
+    <meta charset="utf-8" />
+</head>
+
+<body></body>
+
+
+<script>  
+console.log("---- VAR LET CONST ----");
+
+// const after declaration
+const n1 = 25;
+console.log("const n1 =", n1);
+
+// var before declaration
+console.log("var before declaration:", n2);
+var n2 = 25;
+
+// let before declaration (ERROR example)
+try {
+    console.log(n3);
+    let n3 = 25;
+} catch (e) {
+    console.log("let before declaration -> ReferenceError");
+}
+
+
+
+console.log("---- BLOCK SCOPE ----");
+
+let number = 25;
+
+{
+    number = 30;
+    console.log("inside block:", number);
+}
+
+console.log("outside block:", number);
+
+
+// new block variable
+{
+    let number2 = 40;
+    console.log("block variable:", number2);
+}
+
+try{
+    console.log(number2);
+}catch(e){
+    console.log("number2 does not exist outside block");
+}
+
+
+</script>
+
+
+</html>
